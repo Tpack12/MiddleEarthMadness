@@ -4,11 +4,11 @@ import middleearth.mu.edu.management.CharacterManager;
 import middleearth.mu.edu.characters.*;
 import java.util.Scanner;
 
-public class menu {
+public class Menu {
 	private Scanner scanner;
 	private CharacterManager manager;
 	
-	public menu(Scanner scanner, CharacterManager manager) {
+	public Menu(Scanner scanner, CharacterManager manager) {
 		this.scanner = scanner;
 		this.manager = manager;
 	}
@@ -32,7 +32,7 @@ public class menu {
 			case 2 -> manager.displayAllCharacters();
 			case 3 -> updateCharacter();
 			case 4 -> deleteCharacter();
-			case 5 -> exectureAttacks();
+			case 5 -> executeAttacks();
 			case 6 -> {
 				System.out.println("Exiting Middle-Earth Madness...");
 				return;
@@ -95,11 +95,55 @@ public class menu {
 		double power = scanner.nextDouble();
 		scanner.nextLine();
 		
-		if (manager.updateCharacter(character, name, (int) health,, (int) power)) {
+		if (manager.updateCharacter(character, name, (int) health, (int) power)) {
 			System.out.println("Character updated successfully!");
 		} else {
 			System.out.println("Update failed.");
 		}
 	}
-
+	
+	private void deleteCharacter() {
+		System.out.println("Enter character name to delete: ");
+		String name = scanner.nextLine();
+		
+		MiddleEarthCharacter character = manager.getCharacter(name);
+		if (character == null) {
+			System.out.println("Character not found");
+			return;
+		}
+		
+		if (manager.deleteCharacter(character)) {
+			System.out.println("Character deleted successfully!");
+		} else {
+			System.out.println("Failed to delete character.");
+		}
+	}
+	
+	private void executeAttacks() {
+		System.out.println("Executing battle sequence...");
+		
+		for(int i = 0; i < manager.getSize(); i++) {
+			MiddleEarthCharacter attacker = manager.getCharacterAt(i);
+			if (attacker.getHealth() <= 0) continue;
+			
+			for (int j = 0; j < manager.getSize(); j++) {
+				if (i == j) continue;
+				
+				MiddleEarthCharacter target = manager.getCharacterAt(j);
+				if (target.getHealth() <= 0) continue;
+				
+				boolean attackSuccessful = attacker.attack(target);
+				
+				if (attackSuccessful) {
+					System.out.println(attacker.getName() + "attacked" + target.getName() + "! " + target.getName() + " now has " + target.getHealth() + " health.");
+					
+				if (target.getHealth() <= 0) {
+					System.out.println(target.getName() + " has ben defeated!");
+				}
+			}
+		}
+	}
+}		
+	
+	System.out.println("===== Battle Ends! =====");{ 
 }
