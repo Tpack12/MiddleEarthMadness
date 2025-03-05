@@ -5,10 +5,7 @@ import middleearth.mu.edu.management.MiddleEarthCouncil;
 import middleearth.mu.edu.management.CharacterManager;
 import java.util.Scanner;
 
-/**
- * MiddleEarthApp - Main application class to manage Middle-earth characters.
- * Provides a menu-driven interface for CRUD operations and battle simulations.
- */
+
 public class MiddleEarthApp {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
