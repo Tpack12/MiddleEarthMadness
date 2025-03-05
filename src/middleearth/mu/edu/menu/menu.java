@@ -69,6 +69,37 @@ public class menu {
 		
 		};
 		
+		if (character != null) {
+			if(manager.addCharacter(character)) {
+				System.out.println("Character added successfully!");
+			} else {
+				System.out.println("Failed to add character");
+			}
+		}
+		
+	}
+	
+	private void updateCharacter() {
+		System.out.println("Enter character name to update: ");
+		String name = scanner.nextLine();
+		
+		MiddleEarthCharacter character = manager.getCharacter(name);
+		if (character == null) {
+			System.out.println("Character not found.");
+			return;
+		}
+		
+		System.out.println("Enter new health: ");
+		double health = scanner.nextDouble();
+		System.out.println("Enter a new power: ");
+		double power = scanner.nextDouble();
+		scanner.nextLine();
+		
+		if (manager.updateCharacter(character, name, (int) health,, (int) power)) {
+			System.out.println("Character updated successfully!");
+		} else {
+			System.out.println("Update failed.");
+		}
 	}
 
 }
