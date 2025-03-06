@@ -1,30 +1,31 @@
 package middleearth.mu.edu.characters;
 
-abstract class MiddleEarthCharacter {
-	String name;
-	double health;
-	double power;
+public abstract class MiddleEarthCharacter {
+    protected String name;
+    protected double health;
+    protected double power;
+    
+    public MiddleEarthCharacter(String name, double health, double power) {
+        this.name = name;
+        this.health = health;
+        this.power = power;
+    }
+	
+    public abstract boolean attack(MiddleEarthCharacter target);
+    
+    public abstract String getRace();
+    
+    public void displayInfo() {
+        System.out.println("Name: " + name + ", Race: " + getRace() +
+                ", Health: " + health + ", Power: " + power);
+    }
+    
+    //Getters and Setters
+    public String getName() { return name; }
+    public double getHealth() { return health; }
+    public double getPower() { return power; }
 
-	//Constructor that initializes the name, health, and power of a character
-	public MiddleEarthCharacter(String name, double health, double power) {
-		this.name = name;
-		this.health = health;
-		this.power = power;
-	}
-	
-	//Method to handle the attack logic
-	public abstract boolean attack(MiddleEarthCharacter target);
-	
-	//Method to get the race of the character
-	public abstract String getRace();
-	
-	//Method that displays character details
-	public void displayInfo() {
-		System.out.println("Name: " + name);
-		System.out.println("Health: " + health);
-		System.out.println("Power: " + power);
-		System.out.println("Race: " + getRace());
-	}
-	
+    public void setHealth(double health) { this.health = health; }
+    public void setPower(double power) { this.power = power; }
 }
 	
