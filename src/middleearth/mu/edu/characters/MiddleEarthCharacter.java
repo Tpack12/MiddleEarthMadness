@@ -18,6 +18,7 @@ abstract class MiddleEarthCharacter {
 	//Method to get the race of the character
 	public abstract String getRace();
 	
+	//Method that displays character details
 	public void displayInfo() {
 		System.out.println("Name: " + name);
 		System.out.println("Health: " + health);
