@@ -28,4 +28,14 @@ public class CharacterManager {
 		return null;
 	}
 	
+	public boolean updateCharacter(MiddleEarthCharacter character, String name, int health, int power) {
+		for (int i = 0; i < size; i++) {
+			if (characters[i] == character) {
+				characters[i].setHealth(health);
+				characters[i].setPower(power);
+				return true;
+			}
+		}
+		return false;
+	}
 }
