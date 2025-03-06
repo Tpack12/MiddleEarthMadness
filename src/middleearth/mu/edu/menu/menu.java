@@ -143,7 +143,6 @@ public class Menu {
 			}
 		}
 	}
-}		
-	
-	System.out.println("===== Battle Ends! =====");{ 
+	System.out.println("===== Battle Ends! =====");
+	}
 }
