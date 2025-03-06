@@ -1,6 +1,6 @@
 package middleearth.mu.edu;
 
-import middleearth.mu.edu.menu.menu;
+import middleearth.mu.edu.menu.Menu;
 import middleearth.mu.edu.management.MiddleEarthCouncil;
 import middleearth.mu.edu.management.CharacterManager;
 import java.util.Scanner;
