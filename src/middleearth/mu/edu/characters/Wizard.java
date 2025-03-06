@@ -1,7 +1,7 @@
 package middleearth.mu.edu.characters;
 
 //Constructor initializes Wizard character details
-class Wizard extends MiddleEarthCharacter {
+public class Wizard extends MiddleEarthCharacter {
 	public Wizard(String name, double health, double power) {
 		super(name, health, power);
 	}

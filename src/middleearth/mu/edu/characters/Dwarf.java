@@ -1,7 +1,7 @@
 package middleearth.mu.edu.characters;
 
 //Constructor initializes Dwarf character details
-class Dwarf extends MiddleEarthCharacter {
+public class Dwarf extends MiddleEarthCharacter {
 	public Dwarf(String name, double health, double power) {
 		super(name, health, power);
 	}
@@ -22,7 +22,7 @@ class Dwarf extends MiddleEarthCharacter {
 	
 	//Returns the race of the character
 	@Override
-	public String getRace() {
+	public String getRace(){
 		return "Dwarf";
 	}
 }
