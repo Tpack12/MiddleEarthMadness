@@ -1,7 +1,7 @@
 package middleearth.mu.edu.characters;
 
 //Constructor initializes Human character details
-class Human extends MiddleEarthCharacter {
+public class Human extends MiddleEarthCharacter {
 	public Human(String name, double health, double power) {
 		super(name, health, power);
 	}

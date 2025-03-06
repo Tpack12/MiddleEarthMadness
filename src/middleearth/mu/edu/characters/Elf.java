@@ -1,7 +1,7 @@
 package middleearth.mu.edu.characters;
 
 //Constructor initializes Elf character details
-class Elf extends MiddleEarthCharacter {
+public class Elf extends MiddleEarthCharacter {
 	public Elf(String name, double health, double power) {
 		super(name, health, power);
 	}
